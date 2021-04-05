@@ -8,6 +8,7 @@ name = "pypi"
 [dev-packages]
 pytest = "*"
 selenium = "*"
+pytest-html = "*"
 
 [requires]
 python_version = "3.9"
