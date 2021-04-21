@@ -10,8 +10,8 @@ class DuckDuckGoResultPage(BasePage):
         xpath = f"//div[@id='links']//*[contains(text(), '{phrase}')]"
         return (By.XPATH, xpath)
 
-    def __init__(self, browser):
-        super().__init__(browser)
+    def __init__(self, driver):
+        super().__init__(driver)
 
     def link_div_count(self):
         return len(self.get_elements(self.LINK_DIVS))
