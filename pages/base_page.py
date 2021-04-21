@@ -1,3 +1,7 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+from generics.config import TestData
+
 class BasePage:
     
     # Constructor that will receive the browser parameter.
@@ -6,11 +10,11 @@ class BasePage:
 
     # This method will be reused by all the methods that require interact with an element.
     def get_element(self, element):
-        return self.driver.find_element(*element)
+        return WebDriverWait(self.driver, TestData.WAIT_TIME).until(ec.visibility_of_element_located(element))
 
     # This method will be return a list of elements.
     def get_elements(self, element):
-        return self.driver.find_elements(*element)
+        return WebDriverWait(self.driver, TestData.WAIT_TIME).until(ec.visibility_of_all_elements_located(element))
 
     # A method to click on any element, using the local method to find element.
     def click_on_element(self, element):

@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 class DuckDuckGoResultPage(BasePage):
-    LINK_DIVS = (By.CSS_SELECTOR, "#links > div")
+    LINK_DIVS = (By.CSS_SELECTOR, "a.result__a")
     SEARCH_INPUT = (By.ID, "search_form_input")
 
     @classmethod
